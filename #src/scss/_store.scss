@@ -1,0 +1,455 @@
+.store {
+    padding-bottom: 20px;
+    background-color: #fff;
+    &__header-inner {
+    }
+
+    &__header {
+    }
+
+    &__title {
+    }
+
+    &__beardcrumbs {
+    }
+
+    &__content {
+        padding: 30px 0 20px;
+        background-color: #fff;
+        @media (max-width: $media-mb) {
+            padding-top: 10px;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        gap: 40px;
+        @media (max-width: $media-big-tb) {
+            gap: 20px;
+        }
+        @media (max-width: $media-mb) {
+            display: block;
+        }
+    }
+    &__products {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        row-gap: 40px;
+        column-gap: 10px;
+        padding-bottom: 40px;
+        padding-top: 50px;
+        position: relative;
+        @media (max-width: $media-big-tb) {
+            grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        }
+        @media (max-width: $media-tb) {
+            display: block;
+        }
+        @media (max-width: $media-mb) {
+            padding-bottom: 20px;
+        }
+    }
+    &__select {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @media (max-width: $media-mb) {
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+    &__item {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        @media (max-width: $media-big-tb) {
+            grid-template: 1.5fr 1fr / 1fr;
+        }
+        @media (max-width: $media-tb) {
+            display: block;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #c7c7c7;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @media (max-width: $media-mb) {
+            border-bottom: 1px solid #c7c7c7;
+        }
+    }
+
+    &__photo {
+        position: relative;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 100%;
+        width: 100%;
+        & img {
+            width: 100%;
+        }
+        &::after {
+            content: "view more";
+            text-transform: uppercase;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            font-weight: 700;
+            text-align: center;
+            background: #f5f6f7;
+            color: $mainColor;
+            opacity: 0;
+            transition: opacity ease 0.5s, border 0.3s ease;
+        }
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                &::after {
+                    border: solid 10px #bf9456;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__title-link {
+        color: $mainColor;
+        font-weight: 700;
+        font-size: 13px;
+        transition: all ease 0.2s;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                color: $secondColor;
+            }
+        }
+    }
+    &__info {
+        background-color: #f7f7f7;
+        padding: 20px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        @media (max-width: $media-tb) {
+            display: block;
+        }
+        @media (max-width: $media-mb) {
+            padding: 10px;
+        }
+    }
+
+    &__price {
+        color: $secondColor;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        display: grid;
+        align-items: center;
+    }
+
+    &__cart {
+        display: grid;
+        grid-template: 1fr/1fr 2fr;
+        align-items: center;
+        justify-items: center;
+        background-color: $secondColor;
+        transition: all ease 0.3s;
+        &:hover {
+            background-color: #000;
+            & .cart__text {
+                color: $secondColor;
+            }
+        }
+    }
+
+    &__menu {
+    }
+}
+
+.cart {
+    &__img {
+        background-color: $mainColor;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 10px 0;
+        & img {
+            width: 30px;
+        }
+    }
+
+    &__text {
+        color: $mainColor;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+        transition: all ease 0.3s;
+    }
+}
+.options {
+    &__cart {
+        background-color: #f7f7f7;
+        padding: 30px;
+        margin-bottom: 3px;
+        @media (max-width: $media-big-tb) {
+            padding: 15px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 15px;
+    }
+    &__body {
+        font-size: 12px;
+        color: #9c9c9c;
+        height: 50px;
+        display: grid;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    &__category {
+        background-color: #f7f7f7;
+        padding: 30px;
+        margin-bottom: 3px;
+        @media (max-width: $media-big-tb) {
+            padding: 15px;
+        }
+    }
+
+    &__filter {
+        padding: 30px;
+        background-color: #f7f7f7;
+        @media (max-width: $media-big-tb) {
+            padding: 15px;
+        }
+    }
+}
+.category {
+    &__title {
+    }
+
+    &__body {
+    }
+
+    &__item {
+        list-style: circle;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                & .category__link {
+                    color: $secondColor;
+                }
+                &::marker {
+                    color: $secondColor;
+                    transition: all ease 0.2s;
+                }
+            }
+        }
+        &::marker {
+            transition: all ease 0.2s;
+        }
+        & span {
+            font-size: 12px;
+            color: #9c9c9c;
+        }
+    }
+
+    &__link {
+        color: $mainColor;
+        transition: all ease 0.2s;
+        font-size: 12px;
+    }
+
+    &__count {
+    }
+}
+.filter {
+    &__title {
+    }
+
+    &__body {
+    }
+    &__sect {
+        padding: 0 15px;
+        @media (max-width: $media-big-tb) {
+            padding: 0 20px;
+        }
+        @media (max-width: $media-tb) {
+            padding: 0 10px;
+        }
+    }
+    &__filter {
+    }
+
+    &__footer {
+        display: grid;
+        grid-template: 1fr / repeat(2, 1fr);
+        @media (max-width: $media-big-tb) {
+            grid-template: repeat(2, 1fr) / 1fr;
+        }
+    }
+
+    &__btn {
+        background-color: $secondColor;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 10px 5px;
+        color: $mainColor;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: all ease 0.3s;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                background-color: $mainColor;
+                color: #fff;
+            }
+        }
+        @media (max-width: $media-big-tb) {
+            order: 2;
+        }
+    }
+
+    &__prices {
+        padding: 10px 5px;
+        font-size: 12px;
+        color: #9c9c9c;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        @media (max-width: $media-big-tb) {
+            order: 1;
+        }
+    }
+
+    &__prices-val {
+        color: $mainColor;
+        font-weight: 700;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__line {
+        position: relative;
+        display: flex;
+    }
+
+    &__item {
+        width: 25px;
+        height: 25px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        background-color: $secondColor;
+        color: #fff;
+        border: 3px solid $secondColor;
+        border-radius: 2px;
+        transition: all ease 0.2s;
+        margin-right: 5px;
+
+        &.current {
+            background-color: #fff;
+            color: $secondColor;
+            cursor: default;
+        }
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                background-color: #fff;
+                color: $secondColor;
+            }
+        }
+    }
+    &__btn-group {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template: 1fr/1fr 1fr;
+        gap: 3px;
+        &.prev {
+            left: -38px;
+        }
+        &.next {
+            right: -35px;
+        }
+    }
+    &__btn {
+        width: 15px;
+        height: 15px;
+        &.disabled {
+            cursor: default;
+        }
+        & div {
+            width: 15px;
+            height: 15px;
+            transition: all ease 0.2s;
+        }
+        &.prev {
+            & div {
+                background: url(../img/icons/right-arrow.svg) center no-repeat;
+                background-size: cover;
+                transform: rotate(180deg);
+            }
+            &.disabled {
+                & div {
+                    background: url(../img/icons/right-arrow-dis.svg) center no-repeat;
+                    background-size: cover;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &.next {
+            & div {
+                background: url(../img/icons/right-arrow.svg) center no-repeat;
+                background-size: cover;
+            }
+            &.disabled {
+                & div {
+                    background: url(../img/icons/right-arrow-dis.svg) center no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        &.first {
+            & div {
+                background: url(../img/icons/left-arrows.svg) center no-repeat;
+                background-size: cover;
+            }
+            &.disabled {
+                & div {
+                    background: url(../img/icons/left-arrows-dis.svg) center no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+
+        &.end {
+            & div {
+                background: url(../img/icons/left-arrows.svg) center no-repeat;
+                background-size: cover;
+                transform: rotate(180deg);
+            }
+            &.disabled {
+                & div {
+                    background: url(../img/icons/left-arrows-dis.svg) center no-repeat;
+                    background-size: cover;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

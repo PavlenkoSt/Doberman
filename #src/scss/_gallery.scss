@@ -1,0 +1,134 @@
+.gallery {
+    padding: 40px 15px 20px;
+    background-color: #fff;
+    @media (max-width: $media-mb) {
+        padding: 30px 5px 20px;
+    }
+    &__title {
+    }
+
+    &__grid {
+        display: grid;
+        grid-template: 1fr / repeat(5, 1fr);
+        margin-bottom: 30px;
+        gap: 20px;
+        @media (max-width: $media-big-tb) {
+            grid-template: 1fr / repeat(4, 1fr);
+        }
+        @media (max-width: $media-tb) {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+        @media (max-width: $media-mb) {
+            gap: 5px;
+        }
+    }
+
+    &__item {
+        transition: all ease 0.5s;
+        position: relative;
+        overflow: hidden;
+        & img {
+            transition: all ease 0.5s;
+            filter: grayscale(0);
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transition: all ease 0.3s;
+        }
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                filter: grayscale(0);
+                & img {
+                    filter: grayscale(100%);
+                }
+                &::after {
+                    border: 10px solid $secondColor;
+                }
+                & .gallery__hover {
+                    opacity: 1;
+                    & .gallery__hair {
+                        &::after {
+                            width: 30%;
+                        }
+                    }
+                    & .gallery__icon {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        @media (max-width: $media-big-tb) {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+    &__hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(48, 48, 48, 0.75);
+        transition: all ease 0.5s;
+        transform-origin: 50% 50% 0px;
+        transform-style: flat;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        opacity: 0;
+    }
+
+    &__info {
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+    &__hair {
+        padding-bottom: 30px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: all ease 0.6s;
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        background: url(../img/icons/glass.svg) center no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 100;
+        transform: translateY(200px);
+        transition: all ease 0.3s 0.3s;
+        opacity: 0;
+    }
+
+    &__btn {
+    }
+}

@@ -1,0 +1,114 @@
+.products {
+    padding: 40px 0 20px;
+    background-color: #fff;
+    @media (max-width: $media-mb) {
+        padding-top: 30px;
+    }
+    &__title {
+    }
+
+    &__grid {
+        display: grid;
+        grid-template: 1fr / repeat(4, 1fr);
+        gap: 40px;
+        @media (max-width: $media-big-tb) {
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+            gap: 5px;
+        }
+        @media (max-width: $media-mb) {
+            grid-template: repeat(4, 1fr) / 1fr;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template: 1fr/ 1fr;
+        margin-bottom: 50px;
+        position: relative;
+        overflow: hidden;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                & .products__hover {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__hover {
+        position: absolute;
+        top: 10%;
+        right: 2px;
+        width: 80px;
+        height: 80px;
+        display: grid;
+        justify-items: center;
+        align-items: end;
+        background-color: $secondColor;
+        font-weight: 700;
+        color: $mainColor;
+        z-index: 10;
+        box-shadow: 1px 1px 1px #333;
+        transition: all ease 0.3s;
+        opacity: 0;
+        transform: translateY(300%);
+        &::before {
+            content: "";
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../img/icons/shopping-cart.svg) center no-repeat;
+            background-size: 25px;
+            z-index: 1;
+            background-color: $mainColor;
+        }
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                background-color: #000;
+                color: $secondColor;
+            }
+        }
+        @media (max-width: $media-big-tb) {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    &__photo {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        & img {
+        }
+    }
+
+    &__name {
+        color: #222;
+        line-height: 20px;
+        text-align: center;
+        font-size: 15px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        font-weight: 700;
+        @media (max-width: $media-mb) {
+            padding: 0 5px;
+        }
+    }
+
+    &__price {
+        text-align: center;
+        color: #bf9456;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 21px;
+        & span {
+            &::after {
+                content: "₴";
+            }
+        }
+    }
+
+    &__btn {
+    }
+}

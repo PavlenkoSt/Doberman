@@ -1,0 +1,77 @@
+.offer {
+    background-color: #fff;
+    padding-bottom: 30px;
+    &__header-inner {
+    }
+
+    &__header {
+    }
+
+    &__title {
+    }
+
+    &__beardcrumbs {
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 0 30px;
+        gap: 10px;
+        @media (max-width: $media-mb) {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        background-color: $secondColor;
+        color: #fff;
+        grid-template-rows: 1fr 1.5fr;
+    }
+    &__name {
+        text-transform: uppercase;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        padding: 20px 15px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        @media (max-width: $media-mb) {
+            padding: 20px 5px;
+        }
+    }
+    &__info {
+        padding: 0 15px;
+        display: grid;
+        @media (max-width: $media-mb) {
+            padding: 0 5px;
+        }
+    }
+
+    &__price {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 10px 0;
+    }
+
+    &__pic {
+        font-size: 40px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        & img {
+            height: 50px;
+            margin-right: 5px;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}

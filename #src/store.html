@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon.png">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Магазин | DOBERMAN</title>
+</head>
+
+<body>
+    @@include('html-blocks/header.html')
+    <div class="wrapper">
+        @@include('html-blocks/top.html')
+        <section class="store">
+            <div class="store__header-inner header-innner-page">
+                <div class="container">
+                    <div class="store__header header-page">
+                        <h2 class="store__title title-page">Doberman Store</h2>
+                        <div class="store__beardcrumbs beardcrumbs"><a href="/Doberman/">Главная</a> / Магазин
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="store__content">
+                <div class="container">
+                    <div class="store__grid">
+                        <div class="store__products">
+                            <div class="store__select select">
+                                <form action="">
+                                    <div class="__select" data-state="">
+                                        <div class="__select__title" data-default="Исходная сортировка">Исходная
+                                            сортировка</div>
+                                        <div class="__select__content">
+                                            <input id="singleSelect0" class="__select__input" type="radio"
+                                                name="singleSelect" checked />
+                                            <label for="singleSelect0" class="__select__label">Исходная
+                                                сортировка</label>
+                                            <input id="singleSelect1" checked class="__select__input" type="radio"
+                                                name="singleSelect" />
+                                            <label for="singleSelect1" class="__select__label">Исходная
+                                                сортировка</label>
+                                            <input id="singleSelect2" class="__select__input" type="radio"
+                                                name="singleSelect" />
+                                            <label for="singleSelect2" class="__select__label">По популярности</label>
+                                            <input id="singleSelect3" class="__select__input" type="radio"
+                                                name="singleSelect" />
+                                            <label for="singleSelect3" class="__select__label">По рейтингу</label>
+                                            <input id="singleSelect4" class="__select__input" type="radio"
+                                                name="singleSelect" />
+                                            <label for="singleSelect4" class="__select__label">По новизне</label>
+                                        </div>
+                                    </div>
+                                    <!-- <select name="" id="">
+                                        <option value="base">Исходная сортировка</option>
+                                        <option value="popular">По популярности</option>
+                                        <option value="rating">По рейтингу</option>
+                                        <option value="new">По новизне</option>
+                                    </select> -->
+                                </form>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/1.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Бальзам для бороды Uppercut beard balm
+                                        100ml</a>
+                                    <div class="store__price">420₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">В корзину</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/2.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Бальзам для бороды Maestro Butter Scotch
+                                        60ml</a>
+                                    <div class="store__price">480₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">В корзину</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/3.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Паста Uppercut Featherweight</a>
+                                    <div class="store__price">200₴ - 550₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">Выбрать...</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/4.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Паста Reuzel Fiber Pomade</a>
+                                    <div class="store__price">330₴ – 550₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">Выбрать...</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/5.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Глина для укладки Bluebeards Revenge Matt
+                                        Clay</a>
+                                    <div class="store__price">120₴ – 400₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">Выбрать...</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="store__item">
+                                <a href="#" class="store__photo">
+                                    <img src="img/store/6.jpg" alt="store">
+                                </a>
+                                <div class="store__info">
+                                    <a href="#" class="store__title-link">Estel Шампунь тонизирующий</a>
+                                    <div class="store__price">250₴ – 490₴</div>
+                                    <a href="#" class="store__cart cart">
+                                        <div class="cart__img">
+                                            <img src="img/icons/shopping-cart.svg" alt="shopping-cart">
+                                        </div>
+                                        <div class="cart__text">Выбрать...</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @@include('html-blocks/menu-store.html')
+                    </div>
+                    <div class="pagination">
+                        <div class="pagination__line">
+                            <div class="pagination__btn-group prev">
+                                <a href="#" class="pagination__btn first disabled">
+                                    <div></div>
+                                </a>
+                                <a href="#" class="pagination__btn prev disabled">
+                                    <div></div>
+                                </a>
+                            </div>
+                            <div class="pagination__item current">1</div>
+                            <a href="#" class="pagination__item">2</a>
+                            <div class="pagination__btn-group next">
+                                <a href="#" class="pagination__btn next">
+                                    <div></div>
+                                </a>
+                                <a href="#" class="pagination__btn end">
+                                    <div></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @@include('html-blocks/footer.html')
+    </div>
+    <script src="js/noUiSlider.js"></script>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>

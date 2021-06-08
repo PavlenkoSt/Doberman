@@ -1,0 +1,192 @@
+@import "_reset";
+@import "_vars";
+@import "_mixins";
+@import "_fonts";
+@import "_intro";
+@import "_header";
+@import "_about";
+@import "_service";
+@import "_scroll-top";
+@import "_reviews";
+@import "_team";
+@import "_gallery";
+@import "_blog";
+@import "_products";
+@import "_form";
+@import "_footer";
+@import "_top";
+@import "_brands";
+@import "_offer";
+@import "_views";
+@import "_articles";
+@import "_store";
+@import "_filter";
+@import "_select";
+@import "_contacts";
+
+//========================================================================================================================
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    font-family: "Caption", sans-serif;
+    background-color: #f7f7f7;
+}
+.wrapper {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    &.no-scroll {
+        overflow: hidden;
+        @media (min-width: $media-big-tb) {
+            padding-right: 16px;
+        }
+    }
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    &.sm {
+        max-width: 1000px;
+    }
+    @media (max-width: $media-mb) {
+        padding: 0 5px;
+    }
+}
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $mainColor;
+    margin-bottom: 50px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        background: url(../img/title.png) center no-repeat;
+        background-size: cover;
+        width: 60px;
+        height: 12px;
+        transform: translateX(-50%);
+    }
+}
+.header-innner-page {
+    background-color: #f7f7f7;
+}
+.header-page {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    padding: 30px 0;
+    align-items: center;
+    @media (max-width: $media-mb) {
+        grid-template: 1fr 1fr / 1fr;
+    }
+}
+.title-page {
+    justify-self: start;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: $mainColor;
+    line-height: 1.1;
+    @media (max-width: $media-mb) {
+        justify-self: center;
+        text-align: center;
+    }
+}
+.beardcrumbs {
+    justify-self: end;
+    font-size: 12px;
+    color: #969696;
+    & a {
+        color: $mainColor;
+        transition: all ease 0.1s;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                color: $secondColor;
+            }
+        }
+    }
+    @media (max-width: $media-mb) {
+        justify-self: center;
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 15px;
+    color: $mainColor;
+    font-weight: 700;
+    width: 200px;
+    height: 50px;
+    display: grid;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #333;
+    &.btn-blog {
+        width: 100%;
+        box-shadow: none;
+    }
+    &.btn-artic {
+        margin: 0;
+    }
+    @media (min-width: $media-big-tb) {
+        &:hover {
+            .btn-main,
+            .btn-hover {
+                transform: translateY(-48px);
+                background-color: $mainColor;
+                color: $secondColor;
+            }
+        }
+    }
+    &-main,
+    &-hover {
+        margin-top: -1px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        width: 200px;
+        height: 50px;
+        transition: transform ease 0.3s, color ease 0.5s, background-color ease 0.5s;
+        background-color: $secondColor;
+        transform-origin: center center;
+        transform-style: flat;
+        &.btn-blog {
+            width: 100%;
+        }
+        &.btn-comment {
+            display: grid;
+            grid-template: 1fr / 1fr 1fr;
+            justify-items: start;
+            gap: 5px;
+            & span {
+                width: 20px;
+                height: 20px;
+                justify-self: flex-end;
+            }
+        }
+        &.btn-comment-black {
+            & span {
+                background: url(../img/icons/comment-black.svg) center no-repeat;
+                background-size: cover;
+            }
+        }
+        &.btn-comment-white {
+            background-color: #fff;
+            & span {
+                background: url(../img/icons/comment.svg) center no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+.team {
+    padding: 40px 0 20px;
+    @media (max-width: $media-mb) {
+        padding-top: 30px;
+    }
+    &.page {
+        background-color: #fff;
+    }
+    &__title {
+    }
+
+    &__body {
+        margin-bottom: 20px;
+    }
+
+    &__slider {
+    }
+
+    &__slide {
+    }
+
+    &__item {
+        position: relative;
+        background-color: #000;
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                &:after {
+                    border: 10px solid $secondColor;
+                }
+                & .team__photo {
+                    transform: translateY(-50px);
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                & .team__name {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                & .team__link {
+                    transform: translate(-50%, -50%);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: all ease 0.5s;
+        }
+    }
+
+    &__photo {
+        transition: all ease 0.5s;
+        position: relative;
+        & img {
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgba(34, 34, 34, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all ease 0.5s;
+        }
+    }
+    &__link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: translate(-50%, 300%);
+        z-index: 3;
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: all ease 0.5s;
+        &::after {
+            content: "";
+            background: url(../img/icons/glass.svg) center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            width: 17px;
+            height: 17px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @media (min-width: $media-big-tb) {
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+        @media (max-width: $media-big-tb) {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+    &__name {
+        position: absolute;
+        padding: 15px;
+        bottom: 10px;
+        left: 0;
+        background-color: rgba(51, 51, 51, 1);
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        opacity: 0;
+        transition: all ease 0.5s;
+        transform-origin: 50% 100% 0px;
+        transform-style: flat;
+        transform: matrix3d(0.8, 0, 0, 0, 0, 0, 0.8, -0.000666667, 0, -1, 0, 0, 0, 0, 0.001, 0.999999);
+        &::after {
+            content: "";
+            width: 100%;
+            height: 20px;
+            background-color: rgba(51, 51, 51, 1);
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+        }
+        @media (max-width: $media-big-tb) {
+            transform: translateY(0);
+            opacity: 1;
+            bottom: 0;
+            padding: 5px;
+            background-color: rgba(51, 51, 51, 0.7);
+        }
+    }
+
+    &__btn {
+    }
+
+    &__btn-slider {
+    }
+}
+
+.team-next,
+.team-prev {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all ease 0.3s;
+    transform: translateY(-50%);
+    cursor: pointer;
+    &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../img/icons/arr.svg) center no-repeat;
+        background-size: cover;
+    }
+    @media (min-width: $media-big-tb) {
+        &:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+.team-next {
+    right: 0;
+    &:after {
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
+}
+.team-prev {
+    left: 0;
+    &:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}

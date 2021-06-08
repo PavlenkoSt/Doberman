@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon.png">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Контакты | DOBERMAN</title>
+</head>
+
+<body>
+    @@include('html-blocks/header.html')
+    <div class="wrapper">
+        @@include('html-blocks/top.html')
+        <section class="contacts">
+            <div class="contacts__header-inner header-innner-page">
+                <div class="container">
+                    <div class="contacts__header header-page">
+                        <h2 class="contacts__title title-page">Контакты</h2>
+                        <div class="contacts__beardcrumbs beardcrumbs"><a href="/Doberman/">Главная</a> / Контакты
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__grid">
+                <div class="contacts__item">
+                    <div class="contacts__icon">
+                        <img src="img/icons/email.svg" alt="email">
+                    </div>
+                    <div class="contacts__links">
+                        <a href="#" class="contacts__link">dobermanbarbershop@gmail.com</a>
+                        <a href="#" class="contacts__link">doberman.ua</a>
+                    </div>
+                </div>
+                <div class="contacts__item">
+                    <div class="contacts__icon">
+                        <img src="img/icons/smartphone.svg" alt="smartphone">
+                    </div>
+                    <div class="contacts__links">
+                        <a href="#" class="contacts__link">Vodafone +38 099 394 1088</a>
+                        <a href="#" class="contacts__link">Kyivstar +38 098 908 2822</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @@include('html-blocks/footer.html')
+    </div>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>
